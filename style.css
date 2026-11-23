@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff0f5;
+    font-family: Arial, sans-serif;
+    color: #a83f70;
+    padding: 20px;
+}
+
+.morning-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px 25px;
+    background-color: #ffe4ee;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(168, 63, 112, 0.15);
+}
+
+.message-box {
+    background-color: white;
+    border-radius: 20px;
+    padding: 25px 15px;
+    margin: 25px 0;
+    min-height: 140px;
+}
+
+.envelope {
+    font-size: 35px;
+}
+
+#love-message {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+#kiss-button {
+    background-color: #a83f70;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#kiss-button:hover {
+    transform: scale(1.05);
+}
+
+#kiss-button:active {
+    transform: scale(0.95);
+}
+
+h1 {
+    font-size: 22px;
+    margin: 20px 0;
+}
+
+.subtitle {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.signature {
+    font-size: 14px;
+    margin-top: 25px;
+    opacity: 0.8;
+}
+
+/*Relatif aux emojis volants au click*/
+.flying-heart {
+    position: fixed;
+    pointer-events: none;
+    font-size: 25px;
+    z-index: 1000;
+    animation: flyAway 1.5s ease-out forwards;
+}
+
+@keyframes flyAway {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(0.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(var(--move-x), -70px) scale(1.3);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(var(--move-x), -150px) scale(0.8);
+    }
+}
+
+/*Relatif au cadeau de fin de cycle*/
+.hidden {
+    display: none;
+}
+
+.gift-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(80, 25, 55, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 2000;
+}
+
+.gift-overlay.hidden {
+    display: none;
+}
+
+.gift-card {
+    width: 100%;
+    max-width: 360px;
+    background: #fff0f5;
+    color: #a83f70;
+    padding: 30px 20px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+.gift-card button {
+    margin: 10px 5px;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 18px;
+    background: #b34c7d;
+    color: white;
+    cursor: pointer;
+}
+
+#gift-message {
+    background: white;
+    border-radius: 15px;
+    padding: 18px;
+    line-height: 1.5;
+}
+
+/*Lettre des 100 clicks*/
+
+.love-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(80, 25, 55, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 3000;
+    overflow-y: auto;
+}
+
+.love-overlay.hidden {
+    display: none;
+}
+
+.love-letter {
+    width: 100%;
+    max-width: 480px;
+    max-height: calc(100dvh - 40px);
+    overflow-y: auto;
+    background: #fff0f5;
+    color: #923c63;
+    padding: 30px 25px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+    animation: letterAppear 0.8s ease-out;
+}
+
+.love-letter p {
+    line-height: 1.6;
+    margin: 18px 0;
+}
+
+.love-letter h2 {
+    color: #9e3866;
+}
+
+#close-letter,
+#reopen-letter {
+    background: #b34c7d;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#reopen-letter.hidden {
+    display: none;
+}
+
+@keyframes letterAppear {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
