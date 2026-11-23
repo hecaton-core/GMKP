@@ -218,3 +218,10 @@ h1 {
         transform: translateY(0) scale(1);
     }
 }
+
+@media (max-width: 480px) {
+    .morning-card h1 {
+        font-size: 1.45rem;
+        line-height: 1.35;
+    }
+}
